@@ -1,0 +1,36 @@
+body{
+    background: #ECECEC;
+}
+
+.imgClass{
+    border-radius: 20%;
+    margin: 50px;
+}
+
+.h1Text{
+    color: #142D4C;
+    margin-left: 50px;
+}
+
+li{
+    color: #142D4C;
+    font-family: Helvetica;
+}
+
+.divBox {
+    border: #385170 solid 3px;
+    margin: 5px;
+    width: 400px;
+    border-radius: 2%;
+    background: #9FD3C7;
+}
+
+.majorBox {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+input{
+    width: 300px;
+}
