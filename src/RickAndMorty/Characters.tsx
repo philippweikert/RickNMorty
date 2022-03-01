@@ -10,13 +10,13 @@ interface CharactersProps{
 export default function Characters(props : CharactersProps){
 
     return(
-        <div className="divBox" data-testid={'test-components'}>
-            <h1 className="h1Text">{props.name}</h1>
-            <img className="imgClass" src={props.pic} alt={'Pic of character'}/>
+        <div className="divBox">
+            <h1 data-testid={'character-name'} className="h1Text">{props.name}</h1>
+            <img data-testid={'character-image'} className="imgClass" src={props.pic} alt={'Pic of character'}/>
             <ul>
-                <li>Location: {props.location}</li>
-                <li>Species:  {props.species}</li>
-                <li>Status:   {props.status}</li>
+                <li data-testid={'character-location'}>Location: {props.location}</li>
+                <li data-testid={'character-species'}>Species: {props.species}</li>
+                <li data-testid={'character-status'}>Status: {props.status}</li>
             </ul>
         </div>
     )

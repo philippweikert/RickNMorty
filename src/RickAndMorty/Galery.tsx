@@ -43,7 +43,7 @@ export default function Gallery() {
 
     return (
         <div>
-        <input type={'text'} placeholder={'Search for your favorite Character'}
+        <input data-testid= "search-field" type={'text'} placeholder={'Search for your favorite Character'}
                onChange={entry => {setFilter(entry.target.value)}} className={'gallerySearch'}/>
             {info.next && <button onClick={() => setPage(page+1)}>To other Characters</button> }
             {info.prev && <button onClick={() => setPage(page-1)}>Back to ye olde ones</button> }
@@ -51,16 +51,19 @@ export default function Gallery() {
             {characters.length>0
                 ?
                 characters.filter(char => char.name.toLowerCase().includes(filter.toLowerCase())).map(character =>
-                <Characters
+                <div data-testid={'gallery-item'}>
+                    <Characters
                     name={character.name}
                     key={character.id}
                     pic={character.image}
                     location={character.location.name}
                     status={character.status}
-                    species={character.species}/>)
+                    species={character.species}/>
+                </div>)
+
                 :
                 <div>I'm tired of beeing at your service...</div>}
-        </div>
+            </div>
         </div>)
 }
 
