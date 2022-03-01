@@ -25,13 +25,18 @@ export default function Gallery() {
 
     useEffect(() => {
         fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
-            .then(response => response.json())
-            .then(data => {
-                setCharacters(data.results)
-                setInfo(data.info)
-                setFilter('')
-            })
-          .catch(() =>console.log('düdüm'))},
+            .then(response => {
+                if(response.status === 200) {
+                    return response.json();
+                }
+                throw new Error("Schade, Marmelade")})
+                    .then(data => {
+                        setCharacters(data.results)
+                        setInfo(data.info)
+                        setFilter('')
+                    })
+                    .catch()
+            },
         [page])
 
 

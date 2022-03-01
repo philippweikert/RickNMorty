@@ -10,7 +10,7 @@ interface CharactersProps{
 export default function Characters(props : CharactersProps){
 
     return(
-        <div className="divBox">
+        <div className="divBox" data-testid={'test-components'}>
             <h1 className="h1Text">{props.name}</h1>
             <img className="imgClass" src={props.pic} alt={'Pic of character'}/>
             <ul>
